@@ -5,4 +5,3 @@
 *It's a great site for clojure and some basics with setting up Emacs*
 
 **Note: If you download the folder from the website, uou will have to change some things to make it work properly nowadays**
-# this is a Clojure-friendly emacs config
