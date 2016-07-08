@@ -130,3 +130,10 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; set appropriate modes on
+(rainbow-delimiters-mode t)
+(paredit-mode t)
+
+;; manually turn on monokai
+(load-theme 'monokai t)
