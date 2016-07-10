@@ -46,6 +46,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    ;; evil mode
+    evil
+    
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -64,6 +67,9 @@
 
     ;; edit html tags like sexps
     tagedit
+
+    ;; monokai theme for emacs
+    monokai-theme
 
     ;; git integration
     magit))
@@ -137,3 +143,32 @@
 
 ;; manually turn on monokai
 (load-theme 'monokai t)
+
+;; CIDER/fighwheel nrepl set up
+(require 'cider)
+(setq cider-cljs-lein-repl 
+      "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(package-selected-packages
+   (quote
+    (git powerline evil tagedit smex rainbow-delimiters projectile paredit monokai-theme magit ido-ubiquitous clojure-mode-extra-font-locking cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(require 'evil)
+(evil-mode 1)
+
+(require 'powerline)
+(powerline-default-theme)
+
