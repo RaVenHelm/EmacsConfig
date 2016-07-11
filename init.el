@@ -46,9 +46,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
-    ;; evil mode
-    evil
-    
+    ;; powerline
+    powerline
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -137,6 +137,10 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 
+;; just in case cider doesn't work with
+;; manual install of lein
+(add-to-list 'exec-path "~/bin")
+
 ;; set appropriate modes on
 (rainbow-delimiters-mode t)
 (paredit-mode t)
@@ -165,9 +169,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(require 'evil)
-(evil-mode 1)
 
 (require 'powerline)
 (powerline-default-theme)
